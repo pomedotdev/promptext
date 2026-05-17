@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Promptext</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 20px 0;
+    }
+
+    header .inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header a {
+      font-weight: 600;
+      font-size: 15px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    header a:hover { text-decoration: underline; }
+
+    header span {
+      color: #999;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    p { margin-bottom: 14px; }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    ul li { margin-bottom: 6px; }
+
+    .notice {
+      background: #f5f5f5;
+      border-left: 3px solid #1a1a1a;
+      padding: 14px 16px;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 600;
+      padding: 8px 12px;
+      background: #f5f5f5;
+      border: 1px solid #e5e5e5;
+    }
+
+    td {
+      padding: 8px 12px;
+      border: 1px solid #e5e5e5;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #fafafa; }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      background: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a href="https://github.com/pomedotdev/promptext">Promptext</a>
+    <span>/</span>
+    <span>Privacy Policy</span>
+  </div>
+</header>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: May 17, 2026</p>
+
+  <h2>What Promptext collects</h2>
+  <p>Promptext collects anonymous usage analytics to understand how the extension is used and to improve it over time. No personal information is ever collected.</p>
+
+  <h3>Anonymous identifier</h3>
+  <p>On first use, Promptext generates a random UUID and stores it in the extension's local storage. This identifier is not linked to your identity, browser account, or any other personal data. It exists solely to deduplicate events (e.g. to distinguish "10 users each copied XML once" from "1 user copied XML 10 times").</p>
+
+  <h3>Usage events</h3>
+  <p>The following events are sent to <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a>, a third-party analytics service:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>When it fires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>prompt_created</code></td><td>A new prompt is saved for the first time</td></tr>
+      <tr><td><code>prompt_deleted</code></td><td>A prompt is deleted</td></tr>
+      <tr><td><code>prompt_duplicated</code></td><td>A prompt is duplicated</td></tr>
+      <tr><td><code>prompt_xml_copied</code></td><td>The prompt XML is copied to the clipboard</td></tr>
+      <tr><td><code>prompt_opened_in_claude</code></td><td>A prompt is sent to Claude.ai</td></tr>
+      <tr><td><code>prompt_opened_in_chatgpt</code></td><td>A prompt is sent to ChatGPT</td></tr>
+      <tr><td><code>snippet_added_to_gallery</code></td><td>A prompt element is saved to the snippet gallery</td></tr>
+      <tr><td><code>snippet_deleted</code></td><td>A snippet is deleted</td></tr>
+      <tr><td><code>snippet_saved_from_context_menu</code></td><td>A text selection is saved as a snippet via right-click</td></tr>
+      <tr><td><code>s3_sync_configured</code></td><td>S3 sync settings are saved</td></tr>
+      <tr><td><code>s3_sync_manual</code></td><td>A manual S3 sync is triggered</td></tr>
+      <tr><td><code>s3_connection_tested</code></td><td>The S3 connection is tested from settings</td></tr>
+    </tbody>
+  </table>
+
+  <p>Each event carries only the anonymous identifier described above and, where noted, a small set of non-personal properties (e.g. whether a custom S3 endpoint is used, or the XML tag name of a saved snippet).</p>
+
+  <div class="notice">
+    No prompt content, no S3 credentials, no URLs, and no browser or system identifiers are ever sent.
+  </div>
+
+  <h2>What Promptext does not collect</h2>
+  <ul>
+    <li>The content of your prompts or snippets</li>
+    <li>Your S3 credentials, bucket name, or any sync data</li>
+    <li>Your IP address (PostHog is configured to not store it)</li>
+    <li>Your name, email, or any account information</li>
+    <li>Browsing history or data from pages you visit</li>
+  </ul>
+
+  <h2>Where data goes</h2>
+  <p>Events are sent to <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a> and stored on their infrastructure. PostHog's own privacy policy is available at <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</p>
+
+  <h2>Your data, locally</h2>
+  <p>All prompts, snippets, and settings are stored exclusively in your browser's local extension storage (<code>chrome.storage.local</code>). If you configure S3 sync, that data is also stored in your own S3 bucket — Promptext has no access to it.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the set of collected events changes materially, this document will be updated with a new date at the top.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Open an issue at the <a href="https://github.com/pomedotdev/promptext" target="_blank" rel="noopener">Promptext repository</a>.</p>
+</main>
+
+<footer>
+  contact: pome.services@gmail.com
+</footer>
+
+</body>
+</html>
